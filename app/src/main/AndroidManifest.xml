@@ -32,9 +32,6 @@
             android:name="proto.inventa.cct.com.inventalibrary.utils.Constants.client_app_id"
             android:value="5634fdf0-b681-11e8-b987-130e971ef126" />
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="ca4b63ad6d15661936043b0dcd56bb2642c2c133" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
