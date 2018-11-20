@@ -1,0 +1,234 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'realm-android'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+repositories {
+    mavenCentral()
+}
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.spice.dfs.b2c"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'spicesafar'
+            keyPassword '##spice!!'
+            storeFile file('SpiceDigital.dat')
+            storePassword '##spice!!'
+        }
+    }
+    buildTypes {
+        production {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://reseller.paypro.id"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://reseller.paypro.id"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        production2 {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://prodpp.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://prodpp.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        demo {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://demopp.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        stg {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://stgpp.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        qastg {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://qastgpp.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        qa {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://qapp.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        devfix {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://devfix.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        dev {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+//            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
+//            buildConfigField 'String', 'CORE_SERVER_URL', '"https://devpp.spicelabs.in"'
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
+        }
+        debug {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'boolean', 'LOG_ENABLED', 'true'
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+//Enabling Databinding
+    dataBinding {
+        enabled = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:design:${rootProject.ext.supportLibVersion}"
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.google.code.gson:gson:2.2.4'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.philliphsu:bottomsheetpickers:2.3.2'
+//    implementation 'com.google.firebase:firebase-messaging:11.0.2'
+    ///OTP PINVIEW
+    implementation 'com.chaos.view:pinview:1.3.1'
+    implementation 'com.google.android.gms:play-services-vision:16.2.0'
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+    // vision barcode scanner
+    implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
+   // implementation files('libs/spice_security.jar')
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.0@aar') {
+        transitive = true;
+    }
+    implementation 'com.appsflyer:af-android-sdk:4+@aar'
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
+  //  implementation(name: 'SonaraxSDK-4.3.0', ext: 'aar')
+
+
+    /* For Inventa */
+    implementation 'proto.inventa-cct.com.inventalibrary:inventa-android-library:1.1.6'
+    /* gson */
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive = true;}
+
+    /* For location Updates */
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    /* glide - for loading and caching images */
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    implementation ('io.socket:socket.io-client:1.0.0') {
+        // excluding org.json which is provided by Android
+        exclude group: 'orig.json', module: 'json'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+    implementation 'io.realm:android-adapters:2.1.1'
+//    implementation 'javax.inject:javax.inject:1'
+
+    //Retrofit not packaged so external includes
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation ('com.squareup.retrofit2:adapter-rxjava:2.3.0'){
+        exclude group: 'io.reactivex', module: 'rxjava'
+    }
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0 '
+    implementation 'com.squareup.okio:okio:1.14.0'
+
+}
+//apply plugin: 'com.google.gms.google-services'
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion '25.3.1'
+            }
+        }
+    }
+}

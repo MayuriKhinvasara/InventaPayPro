@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="proto.inventa.cct.com.inventaapp">
+
+    <application
+        android:name=".InventaClientApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        tools:replace="android:name,android:allowBackup"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".view.LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--qa app-->
+        <meta-data
+            android:name="proto.inventa.cct.com.inventalibrary.utils.Constants.app_id"
+            android:value="5945a030-a6a5-11e8-9576-c1ade8703f68" />
+
+        <meta-data
+            android:name="proto.inventa.cct.com.inventalibrary.utils.Constants.client_app_id"
+            android:value="5634fdf0-b681-11e8-b987-130e971ef126" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ca4b63ad6d15661936043b0dcd56bb2642c2c133" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
