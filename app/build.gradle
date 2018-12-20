@@ -1,31 +1,32 @@
 buildscript {
     repositories {
-    //    maven { url 'https://maven.fabric.io/public' }
+        google()
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
-    //    classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
 apply plugin: 'com.android.application'
-//apply plugin: 'io.fabric'
+apply plugin: 'io.fabric'
 apply plugin: 'realm-android'
 
 repositories {
-   // maven { url 'https://maven.fabric.io/public' }
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 repositories {
     mavenCentral()
 }
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "com.spice.dfs.b2c"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -41,76 +42,11 @@ android {
         }
     }
     buildTypes {
-        production {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://reseller.paypro.id"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://reseller.paypro.id"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        production2 {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://prodpp.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://prodpp.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        demo {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://demopp.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        stg {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://stgpp.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        qastg {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://qastgpp.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        qa {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://qapp.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
-        devfix {
-            shrinkResources true
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://devfix.spicelabs.in"'
-            buildConfigField 'boolean', 'LOG_ENABLED', 'false'
-        }
         dev {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-//            buildConfigField 'String', 'CMS_SERVER_URL', '"https://b2bdev.spicelabs.in"'
-//            buildConfigField 'String', 'CORE_SERVER_URL', '"https://devpp.spicelabs.in"'
             buildConfigField 'String', 'CMS_SERVER_URL', '"https://pocsales.spicelabs.in"'
             buildConfigField 'String', 'CORE_SERVER_URL', '"https://pocsales.spicelabs.in"'
             buildConfigField 'boolean', 'LOG_ENABLED', 'false'
@@ -120,8 +56,8 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-            buildConfigField 'String', 'CMS_SERVER_URL', '"https://pocsales.spicelabs.in"'
-            buildConfigField 'String', 'CORE_SERVER_URL', '"https://pocsales.spicelabs.in"'
+            buildConfigField 'String', 'CMS_SERVER_URL', '"https://sales.spicelabs.in"'
+            buildConfigField 'String', 'CORE_SERVER_URL', '"https://sales.spicelabs.in"'
             buildConfigField 'boolean', 'LOG_ENABLED', 'false'
         }
         debug {
@@ -142,60 +78,77 @@ android {
         enabled = true
     }
     lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
         abortOnError false
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+//        exclude 'META-INF/DEPENDENCIES'
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation "com.android.support:recyclerview-v7:${rootProject.ext.supportLibVersion}"
-    implementation "com.android.support:design:${rootProject.ext.supportLibVersion}"
-    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation 'com.iarcuschin:simpleratingbar:0.1.5'
+    implementation ('com.iarcuschin:simpleratingbar:0.1.5') {
+        exclude group:'com.android.support', module: 'support-v4'
+    }
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    implementation 'com.google.code.gson:gson:2.2.4'
     implementation 'com.android.volley:volley:1.1.0'
-    implementation 'com.philliphsu:bottomsheetpickers:2.3.2'
-//    implementation 'com.google.firebase:firebase-messaging:11.0.2'
+    implementation ('com.philliphsu:bottomsheetpickers:2.3.2') {
+        exclude group:'com.android.support', module: 'design'
+//        exclude group:'com.android.support', module: 'gridlayout-v7'
+        exclude group:'com.android.support', module: 'appcompat-v7'
+    }
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
     ///OTP PINVIEW
     implementation 'com.chaos.view:pinview:1.3.1'
     implementation 'com.google.android.gms:play-services-vision:16.2.0'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'me.relex:circleindicator:1.2.2@aar'
     // vision barcode scanner
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
-   // implementation files('libs/spice_security.jar')
-  //  implementation('com.crashlytics.sdk.android:crashlytics:2.9.0@aar') {
-  //      transitive = true;
-  //  }
+//    implementation files('libs/spice_security.jar')
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.0@aar') {
+        transitive = true;
+    }
     implementation 'com.appsflyer:af-android-sdk:4+@aar'
     implementation 'com.android.installreferrer:installreferrer:1.0'
     implementation 'com.android.support:multidex:1.0.3'
-    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
-    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
-  //  implementation(name: 'SonaraxSDK-4.3.0', ext: 'aar')
-
+    implementation ('com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2') {
+        exclude group:'com.squareup.okhttp3', module: 'okhttp'
+    }
+//    implementation(name: 'SonaraxSDK-4.3.1', ext: 'aar')
     /* For Inventa */
-    implementation 'proto.inventa-cct.com.inventalibrary:inventa-android-library:1.1.6'
+    implementation 'com.android.support:support-annotations:28.0.0'
+    implementation 'proto.inventa-cct.com.inventalibrary:inventa-android-library:1.1.10'
     /* gson */
     implementation 'com.google.code.gson:gson:2.8.2'
 
-  //  implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
-   //     transitive = true;}
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
+        transitive = true;
+    }
 
     /* For location Updates */
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation ('com.google.android.gms:play-services-location:16.0.0') {
+        exclude group:'com.android.support', module: 'support-v4'
+    }
 
     /* glide - for loading and caching images */
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation ('com.github.bumptech.glide:glide:4.7.1') {
+        exclude group:'com.android.support', module: 'support-fragment'
+        exclude group:'com.android.support', module: 'support-annotations'
+    }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 
     implementation ('io.socket:socket.io-client:1.0.0') {
@@ -209,18 +162,30 @@ dependencies {
 
     //Retrofit not packaged so external includes
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation ('com.squareup.retrofit2:adapter-rxjava:2.3.0'){
+    implementation ('com.squareup.retrofit2:adapter-rxjava:2.3.0') {
         exclude group: 'io.reactivex', module: 'rxjava'
+        exclude group: 'com.squareup.retrofit2', module: 'retrofit'
     }
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation ('com.squareup.retrofit2:adapter-rxjava2:2.3.0') {
+        exclude group: 'com.squareup.retrofit2', module: 'retrofit'
+    }
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    implementation ('com.squareup.okhttp3:logging-interceptor:3.8.1') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
     implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0 '
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.squareup.okio:okio:1.14.0'
+    implementation ('com.amazonaws:aws-android-sdk-s3:2.8.4') {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
 
+    implementation ('com.android.databinding:library:3.2.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-core-utils'
+    }
 }
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
 configurations.all {
     resolutionStrategy.eachDependency { DependencyResolveDetails details ->
         def requested = details.requested
