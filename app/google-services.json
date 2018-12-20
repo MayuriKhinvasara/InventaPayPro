@@ -1,0 +1,228 @@
+{
+  "project_info": {
+    "project_number": "197707766907",
+    "firebase_url": "https://fintech-apps-224bc.firebaseio.com",
+    "project_id": "fintech-apps-224bc",
+    "storage_bucket": "fintech-apps-224bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:7b205faa922d931b",
+        "android_client_info": {
+          "package_name": "com.spice.dfs.b2b"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:bf399ff0e1059af9",
+        "android_client_info": {
+          "package_name": "com.spice.dfs.b2c"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:435bb5b9fe69ab59",
+        "android_client_info": {
+          "package_name": "id.nownow.b2b"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:9f01e39c4da4bbac",
+        "android_client_info": {
+          "package_name": "id.paypro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:8a1d05a9d3c7ba64",
+        "android_client_info": {
+          "package_name": "id.paypro.b2b"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:6477308fd93574fe",
+        "android_client_info": {
+          "package_name": "id.spice.asiangames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197707766907:android:9f57730044fedeaa",
+        "android_client_info": {
+          "package_name": "id.spice.parapay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197707766907-84b3p788329p87f3oqhqecpd5di69fhb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9mIW4Q1JEJyfNClqkJwpY5LHflXVIE_o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
